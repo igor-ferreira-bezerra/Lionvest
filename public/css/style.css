@@ -7,12 +7,13 @@
 }
 
 header {
-    background-color: cadetblue;
+    background-color: white;
     width: 100vw;
     height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow:0px 4px 7px 0px rgba(50, 50, 50, 0.4);
 }
 
 header .container {
@@ -42,14 +43,12 @@ header li a {
     text-decoration: none;
     font-size: 1em;
     font-family: sans-serif;
-}
-
-header li a.gold {
-    color: #cca367;
-}
-
-header li a.blue {
     color: #25559f;
+}
+
+header li a:hover {
+    transition: 200ms;
+    color:#cca367;
 }
 
 header li a.criar {
@@ -57,4 +56,18 @@ header li a.criar {
     background-color: #cca367;
     color: #25559f;
     border-radius: 5px;
+}
+
+header li a.criar:hover {
+    transition: 200ms;
+    background-color:#25559f;
+    color: #cca367;
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
