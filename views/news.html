@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link REL="SHORTCUT ICON" HREF="./img/logo.jpg" type="image/x-icon">
     <title>LionVest</title>
-    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -14,11 +15,11 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="./index.html"><img src="../public/img/logo-lateral.png" alt=""></a></li>
+                    <li><a href="/"><img src="./img/logo-lateral.png" alt=""></a></li>
                     <li><a href="#">Sobre</a></li>
                     <li><a href="#">Investimentos</a></li>
                     <li><a href="#">Notícias</a></li>
-                    <li><a href="#">Simule</a></li>
+                    <li><a href="#">Simulador</a></li>
                 </ul>
             </nav>
             <nav>
@@ -37,12 +38,26 @@
             </div>
         </div>
     </div>
-    <div class="news">
-        <div class="img_news"></div>
-        <div class="content_news">
-            <div class="hat_news"></div>
-            <div class="title_news"></div>
-            <div class="time_news"></div>
+    <div class="post_news">
+        <div class="container">
+            {% for post in post_news %}
+            <div class="news">
+                <div class="img_news">
+                    <img onclick="window.open('{{post.link_post}}','_blank');" src=" {{post.img_post}}" alt="">
+                </div>
+                <div class="content_news">
+                    <div class="hat_news">
+                        <p>{{post.hat_post}}</p>
+                    </div>
+                    <div class="title_news">
+                        <a target="_black" href="{{post.link_post}}">{{post.title_post}}</a>
+                    </div>
+                    <div class="time_news">
+                        <p>{{post.time_post}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </body>
