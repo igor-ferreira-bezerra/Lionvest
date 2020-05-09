@@ -1,4 +1,5 @@
 const connection = require('./services/db');
+const request_bot = require('./services/bot_news');
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -24,21 +25,36 @@ nunjucks.configure('views', {
     noCache: true,
 });
 
-//Rotas express
-//Rota '/' Nome
-app.get('/', function (request, response) {
+//Routers express
+//Router '/' Nome
+app.get('/', (request, response) => {
     response.render('index.html');
 });
 
-//Rota '/news' News
+//Router '/news' News
 app.get('/news', (request, response) => {
     connection.query('select * from post_news', (error, results, fields) => {
         const post_news = results;
         response.render('news.html', { post_news });
     });
-})
+});
 
-//Rota '/auth' Autetication 
+//Router '/simulator' Simulator
+app.get('/simulator', (request, response) => {
+    response.render('simulator.html');
+});
+
+//Router '/login' Login
+app.get('/login', (request, response) => {
+    response.render('login.html')
+});
+
+//Router '/register' Register
+app.get('/register', (request, response) => {
+    response.render('register.html');
+});
+
+//Router '/auth' Autetication 
 app.post('/auth', function (require, response) {
     var email = require.body.email;
     var password = require.body.password;
@@ -61,9 +77,8 @@ app.post('/auth', function (require, response) {
     }
 });
 
-//Rota '/register' Register
-
-app.post('/register', function (require, response) {
+//Router '/register' Register
+app.post('/sign_up', function (require, response) {
     var user = require.body.user;
     var email = require.body.email;
     var telefone = require.body.telefone;
@@ -80,7 +95,10 @@ app.post('/register', function (require, response) {
 
 })
 
+//Timer for update database with data bot
+setInterval(request_bot, 60000);
 
+//App express listen port 3000
 app.listen(3000, function () {
     console.log("Server is running on port 3000");
 });
