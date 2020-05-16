@@ -77,7 +77,7 @@ app.post('/auth', function (require, response) {
     }
 });
 
-//Router '/register' Register
+//Router '/sign_up' Sign_up in db
 app.post('/sign_up', function (require, response) {
     var user = require.body.user;
     var email = require.body.email;
