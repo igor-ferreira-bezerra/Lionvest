@@ -5,10 +5,10 @@ const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '123456',
-    database: 'Lionvest'
+    database: 'lionvest',
 });
-
-/*connection.connect(function (err) {
+/*
+connection.connect(function (err) {
     if (err) console.log(err)
     else console.log("Database Connect")
 }); */
