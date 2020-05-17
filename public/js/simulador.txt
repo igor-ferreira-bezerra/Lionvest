@@ -1,0 +1,14 @@
+TAXA SELIC
+
+1 + taxa equivalente = (1 + taxa de juros) ** período da taxa equivalente/período da taxa atual
+
+Taxa de juros 12m	
+3,0000% 
+Taxa equivalente 1m	
+0,2466%
+
+JUROS COMPOSTOS
+
+M = C (1 + i)**t
+
+ 

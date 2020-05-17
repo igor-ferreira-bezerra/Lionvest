@@ -30,34 +30,36 @@
             </nav>
         </div>
     </header>
-    <div class="title_page">
-        <div class="container">
-            <div class="title">
-                <h1>Últimas Notícias</h1>
-                <img src="../public/img/logo.jpg" alt="">
+    <div class="page_news">
+        <div class="title_page">
+            <div class="container">
+                <div class="title">
+                    <h1>Últimas Notícias</h1>
+                    <img src="../public/img/logo.jpg" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <div class="post_news">
-        <div class="container">
-            {% for post in post_news %}
-            <div class="news">
-                <div class="img_news">
-                    <img onclick="window.open('{{post.link_post}}','_blank');" src=" {{post.img_post}}" alt="">
+        <div class="post_news">
+            <div class="container">
+                {% for post in post_news %}
+                <div class="news">
+                    <div class="img_news">
+                        <img onclick="window.open('{{post.link_post}}','_blank');" src=" {{post.img_post}}" alt="">
+                    </div>
+                    <div class="content_news">
+                        <div class="hat_news">
+                            <p>{{post.hat_post}}</p>
+                        </div>
+                        <div class="title_news">
+                            <a target="_black" href="{{post.link_post}}">{{post.title_post}}</a>
+                        </div>
+                        <div class="time_news">
+                            <p>{{post.time_post}}</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="content_news">
-                    <div class="hat_news">
-                        <p>{{post.hat_post}}</p>
-                    </div>
-                    <div class="title_news">
-                        <a target="_black" href="{{post.link_post}}">{{post.title_post}}</a>
-                    </div>
-                    <div class="time_news">
-                        <p>{{post.time_post}}</p>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
 </body>
