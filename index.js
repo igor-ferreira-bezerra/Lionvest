@@ -28,30 +28,30 @@ nunjucks.configure('views', {
 //Routers express
 //Router '/' Nome
 app.get('/', (request, response) => {
-    response.render('index.html');
+    response.render('./home/index.html');
 });
 
 //Router '/news' News
 app.get('/news', (request, response) => {
     connection.query('select * from post_news', (error, results, fields) => {
         const post_news = results;
-        response.render('news.html', { post_news });
+        response.render('./home/news.html', { post_news });
     });
 });
 
 //Router '/simulator' Simulator
 app.get('/simulator', (request, response) => {
-    response.render('simulator.html');
+    response.render('./home/simulator.html');
 });
 
 //Router '/login' Login
 app.get('/login', (request, response) => {
-    response.render('login.html')
+    response.render('./home/login.html')
 });
 
 //Router '/register' Register
 app.get('/register', (request, response) => {
-    response.render('register.html');
+    response.render('./register/register.html');
 });
 
 //Router '/auth' Autetication 
