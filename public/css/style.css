@@ -173,6 +173,27 @@ header li a.criar:hover {
     margin-top: 10px;
 }
 
+.content_simulator {
+    height: 400px;
+    display: flex;
+}
+
+.select_simulator {
+    width: 15%;
+}
+
+.select_simulator .item_select {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    border-right: 4px solid #25559f;
+}
+
+.select_simulator div.select {
+    border-right: 4px solid #cca367;
+}
+}
+
 
 /*------------------------ Login ------------------------*/
 

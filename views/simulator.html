@@ -42,14 +42,37 @@
         <div class="container">
             <div class="content_simulator">
                 <div class="select_simulator">
-                    <div class="tesouro_pre">Tesouro Prefixado</div>
-                    <div class="tesouro_selic">Tesouro Selic</div>
-                    <div class="tesouro_ipca">Tesouro IPCA+</div>
-                    <div class="cdb_lc">CDB e LC</div>
+                    <div id="tesouro_pre" class="item_select">
+                        <p>Tesouro Prefixado</p>
+                    </div>
+                    <div id="tesouro_selic" class="item_select select">
+                        <p>Tesouro Selic</p>
+                    </div>
+                    <div id="tesouro_ipca" class="item_select">
+                        <p>Tesouro IPCA+</p>
+                    </div>
+                    <div id="cdb_lc" class="item_select">
+                        <p>CDB e LC</p>
+                    </div>
                 </div>
                 <div class="info_simulator">
-                    <div class="config_simulator"></div>
-                    <div class="result_simulator"></div>
+                    <div class="config_simulator">
+                        <div class="config_simulator_item">
+                            <div class="item_info">
+                                <p>Depósito inicial</p>
+                                <span>R$<input id="span_initial" value="5000,00"></input></span>
+                            </div>
+                        </div>
+                        <div class="config_simulator_item">
+                            <div class="item_info">
+                                <p>Depósito mensal</p>
+                                <span>R$<input id="span_monthly" value="500,00"></input></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result_simulator">
+
+                    </div>
                 </div>
             </div>
         </div>
