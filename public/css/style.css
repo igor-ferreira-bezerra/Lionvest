@@ -6,17 +6,19 @@
     font-size: 18px;
 }
 
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/*------------------------ Header ------------------------*/
+
 header {
     background-color: white;
     width: 100%;
     height: 70px;
     display: flex;
     box-shadow:0px 4px 7px 0px rgba(50, 50, 50, 0.4);
-}
-
-.container {
-    max-width: 90%;
-    margin: 0 auto;
 }
 
 header .container {
@@ -253,6 +255,7 @@ header li a.criar:hover {
 
 .form_login form .alert {
     color: #cca367;
+    text-align: right;
     font-size: 0.8em;
     font-weight: 600;
     margin:5px 0 15px 60%;
@@ -279,7 +282,8 @@ header li a.criar:hover {
     max-width: 100vh;
     background-image: url("../img/lion_login.jpg");
     background-repeat: no-repeat;
-    background-size: 100%; 
+    background-size: 100%;
+    background-position: top; 
 }
 
 /*------------------------ Register ------------------------*/
@@ -344,9 +348,10 @@ header li a.criar:hover {
 
 .form_register form .alert {
     color: #cca367;
+    text-align: right;
     font-size: 0.8em;
     font-weight: 600;
-    margin:5px 0 15px 60%;
+    margin:5px 0 15px 0;
 }
 
 .form_register form .btn_register {
@@ -368,8 +373,9 @@ header li a.criar:hover {
 .page_register .part_img {
     width: 50%;
     max-width: 100vh;
-    background-image: url("../img/lion_login.jpg");
+    background-image: url("../img/lion_up.jpg");
     background-repeat: no-repeat;
     background-size: 100%; 
+    background-position: center;
 }
 

@@ -46,7 +46,7 @@ app.get('/simulator', (request, response) => {
 
 //Router '/login' Login
 app.get('/login', (request, response) => {
-    response.render('./home/login.html')
+    response.render('./login/login.html')
 });
 
 //Router '/register' Register
@@ -95,7 +95,7 @@ app.post('/sign_up', function (require, response) {
 
 })
 
-//Timer for update database with data bot
+//Timer for update datdabase with data bot
 setInterval(request_bot, 60000);
 
 //App express listen port 3000
