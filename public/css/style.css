@@ -152,7 +152,7 @@ header li a.criar:hover {
     background-image: url("../img/lion_back_simulator.jpg");
     background-size: cover;
     background-position: center;
-    height: 600px;
+    height: 100vh;
 }
 
 .title_simulator .title {
@@ -176,8 +176,10 @@ header li a.criar:hover {
 }
 
 .content_simulator {
-    height: 400px;
+    width: 100%;
+    height: 100vh;
     display: flex;
+    align-items: center;
 }
 
 .select_simulator {
@@ -185,7 +187,7 @@ header li a.criar:hover {
 }
 
 .select_simulator .item_select {
-    height: 100px;
+    height: 20vh;
     display: flex;
     align-items: center;
     border-right: 4px solid #25559f;
@@ -195,6 +197,24 @@ header li a.criar:hover {
     border-right: 4px solid #cca367;
 }
 
+.config_simulator_item .slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: #d3d3d3; 
+    outline: none;
+    height: 4px;
+  border-radius: 5px; 
+  }
+.config_simulator_item .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; 
+    background: #cca367;
+    cursor: pointer;
+  }
 
 
 /*------------------------ Login ------------------------*/
@@ -279,7 +299,6 @@ header li a.criar:hover {
 
 .page_login .part_img {
     width: 50%;
-    max-width: 100vh;
     background-image: url("../img/lion_login.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -372,7 +391,6 @@ header li a.criar:hover {
 
 .page_register .part_img {
     width: 50%;
-    max-width: 100vh;
     background-image: url("../img/lion_up.jpg");
     background-repeat: no-repeat;
     background-size: 100%; 

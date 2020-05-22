@@ -28,7 +28,7 @@ nunjucks.configure('views', {
 //Routers express
 //Router '/' Nome
 app.get('/', (request, response) => {
-    response.render('./home/index.html');
+    response.render('index.html');
 });
 
 //Router '/news' News
