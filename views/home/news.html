@@ -8,6 +8,9 @@
     <title>LionVest</title>
     <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./js/script.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async></script>
 </head>
 
 <body>
@@ -31,6 +34,62 @@
         </div>
     </header>
     <div class="page_news">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript"
+                src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [
+                            {
+                                "description": "IBOVESPA",
+                                "proName": "INDEX:IBOV"
+                            },
+                            {
+                                "description": "DÓLAR",
+                                "proName": "FX_IDC:BRLUSD"
+                            },
+                            {
+                                "description": "BITCOIN",
+                                "proName": "MERCADO:BTCBRL"
+                            },
+                            {
+                                "description": "IFIX",
+                                "proName": "BMFBOVESPA:IFIX"
+                            },
+                            {
+                                "description": "MGLU3",
+                                "proName": "BMFBOVESPA:MGLU3"
+                            },
+                            {
+                                "description": "PETR4",
+                                "proName": "BMFBOVESPA:PETR4"
+                            },
+                            {
+                                "description": "VALE3",
+                                "proName": "BMFBOVESPA:VALE3"
+                            },
+                            {
+                                "description": "ITUB4",
+                                "proName": "BMFBOVESPA:ITUB4"
+                            },
+                            {
+                                "description": "GGBR4",
+                                "proName": "BMFBOVESPA:GGBR4"
+                            },
+                            {
+                                "description": "ABEV3",
+                                "proName": "BMFBOVESPA:ABEV3"
+                            }
+                        ],
+                            "colorTheme": "light",
+                                "isTransparent": false,
+                                    "displayMode": "adaptive",
+                                        "locale": "br"
+                    }
+                </script>
+        </div>
+        <!-- TradingView Widget END -->
         <div class="title_page">
             <div class="container">
                 <div class="title">

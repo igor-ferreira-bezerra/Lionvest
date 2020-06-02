@@ -204,7 +204,7 @@ header li a.criar:hover {
     background: #d3d3d3; 
     outline: none;
     height: 4px;
-  border-radius: 5px; 
+    border-radius: 5px; 
   }
 .config_simulator_item .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
@@ -397,3 +397,101 @@ header li a.criar:hover {
     background-position: center;
 }
 
+/*------------------ Register Password --------------------*/
+
+.page_register_pwd {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/lion_back_register_pwd.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.page_register_pwd .container {
+    max-width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_register_pwd {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 80vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px -3px rgba(0,0,0,0.76);
+}
+
+.form_register_pwd {
+    width: 70%;
+}
+
+.form_register_pwd img {
+    max-height: 80px;
+}
+
+.form_register_pwd h1 {
+    color:#25559f;
+    font-size: 1.2em;
+    margin-top: 30px ;
+}
+
+.form_register_pwd h3 {
+    color: #25559f;
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.form_register_pwd form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_register_pwd form .title {
+    color: #cca367;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.form_register_pwd form input {
+    width: 100%;
+    height: 35px;
+    color: #25559f;
+    font-size: 1em;
+    border-bottom: 2px solid #cca367;
+    outline: none;
+}
+
+.form_register_pwd form input.less_alert {
+    margin-bottom: 15px;
+}
+
+.form_register_pwd form .alert {
+    color: #cca367;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin:5px 0 15px 0;
+}
+
+.form_register_pwd form .btn_register {
+    width: 100%;
+    height: 35px;
+    background-color: #25559f;
+    color: #cca367;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form_register_pwd form a {
+    color: rgb(61, 61, 61);
+    font-size: 0.8em;
+    margin-top: 20px;
+    text-decoration: none;
+}
