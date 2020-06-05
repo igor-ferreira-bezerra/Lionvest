@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link REL="SHORTCUT ICON" HREF="./img/logo.jpg" type="image/x-icon">
+    <title>LionVest</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page_forgot">
+        <div class="container">
+            <div class="content_forgot">
+                <div class="form_forgot">
+                    <img src="./img/logo-lateral.png" alt="">
+                    <form action="">
+                        <label class="title" for="email">Email</label>
+                        <input class="less_alert" id="email" name="email" type="text" placeholder="Digite seu email">
+                        <label class="title" for="cpf">CPF</label>
+                        <input id="cpf" name="cpf" type="text" placeholder="Digite seu CPF">
+                        <span class="alert">Somente números</span>
+                        <button id="id_btn" class="btn_forgot" type="submit">RECUPERAR MINHA {{type}}</button>
+                        <input id="input_type" name="type" style="display:none;" type="text" value="{{type}}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    var type = input_type.value;
+    console.log(type)
+    if (type == 'assinatura') {
+        id_btn.style.height += '45px';
+        console.log('if')
+    }
+
+</script>

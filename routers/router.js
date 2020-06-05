@@ -25,7 +25,7 @@ router.get('/login', (request, response) => {
 });
 
 //Router '/auth' Autetication 
-router.post('/auth', function (require, response) {
+router.post('/auth', (require, response) => {
     var email = require.body.email;
     var password = require.body.password;
     console.log(email, password);
@@ -47,15 +47,50 @@ router.post('/auth', function (require, response) {
     }
 });
 
+//Router '/forgot_pwd' Forgot Password
+router.get('/forgot_pwd', (request, response) => {
+    var type = 'senha';
+    response.render('./login/forgot.html', { type });
+});
+
+//Router '/forgot_pwd' Forgot Signature
+router.get('/forgot_sgt', (request, response) => {
+    var type = 'assinatura';
+    response.render('./login/forgot.html', { type });
+});
 
 //Router '/register' Register
 router.get('/register', (request, response) => {
     response.render('./register/register.html');
 });
 
-router.post('/register_data', (request, response) => {
-    response.render('./register/register_pwd.html');
-})
+router.post('/register_data', (require, response) => {
+    let nome = require.body.nome;
+    let email = require.body.email;
+    let cpf = require.body.cpf;
+    let data_nascimento = require.body.data_nascimento;
+    let dados = { nome, email, cpf, data_nascimento };
+    response.render('./register/register_pwd.html', { dados });
+});
+
+router.post('/register_pwd', (require, response) => {
+    let nome = require.body.nome;
+    let email = require.body.email;
+    let cpf = require.body.cpf;
+    let data_nascimento = require.body.data_nascimento;
+    let senha = require.body.senha;
+    let assinatura = require.body.assinatura;
+    let values = { nome, email, cpf, data_nascimento, senha, assinatura };
+    let query = 'insert into cliente value (null,?,?,?,?,MD5(?),?)';
+    /*connection.query(query, values, (err, result) => {
+        if (err) {
+            response.render('/register');
+            console.log(err)
+        } else {
+            console.log('ok')
+        }
+    }) */
+});
 
 //Router '/sign_up' Sign_up in db
 router.post('/sign_up', function (require, response) {
