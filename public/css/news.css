@@ -1,0 +1,75 @@
+/*------------------------ News ------------------------*/
+
+.title_page .title {
+    width: 100%;
+    max-height: 200px;
+    margin: 50px 0 0 60px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.title_page .title h1 {
+    font-size: 1.8em;
+    font-weight: 900;
+    color: #cca367;
+}
+
+.title_page .title .autor{
+    font-size: 0.7em;
+    color: rgba(80, 80, 80, 0.658);
+}
+
+.post_news {
+    display: flex;
+    flex-direction: column;
+}
+
+.news {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    margin-left: 50px;
+    padding: 15px 0;
+    border-top: 1px solid rgb(214, 214, 214);
+}
+
+.news .img_news img {
+    max-height: 180px;
+    cursor: pointer;
+}
+
+.news .content_news {
+    height: 190px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.content_news .hat_news p {
+    color: #cca367;
+    font-size: 0.9em;
+    font-weight: 900;
+}
+
+.content_news .title_news {
+    width: 70%;
+}
+
+.content_news .title_news a {
+    color: rgba(20, 20, 20, 0.918);
+    font-size: 1.2em;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.content_news .title_news a:hover {
+    color: #25559f;
+}
+
+.content_news .time_news p {
+    color: rgb(95, 95, 95);
+    font-size: 0.8em;
+    font-weight: 900;
+}

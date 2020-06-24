@@ -1,0 +1,170 @@
+
+/*------------------------ Login ------------------------*/
+
+.page_login {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.page_login .part_login {
+    width: 50%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+.form_login {
+    width: 50%;
+}
+
+.form_login img {
+    max-height: 80px;
+}
+
+.form_login h1 {
+    color:#25559f;
+    font-size: 1.2em;
+    margin-top: 30px ;
+}
+
+.form_login h3 {
+    color: #25559f;
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.form_login form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_login form .title {
+    color: #cca367;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.form_login form input {
+    width: 100%;
+    height: 35px;
+    color: #25559f;
+    font-size: 1em;
+    border-bottom: 2px solid #cca367;
+    outline: none;
+}
+
+.form_login form .alert {
+    color: #cca367;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin:5px 0 15px 60%;
+}
+
+.form_login form .btn_login {
+    width: 100%;
+    height: 35px;
+    background-color: #25559f;
+    color: #cca367;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.form_login form a {
+    color: rgb(61, 61, 61);
+    font-size: 0.8em;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.page_login .part_img {
+    width: 50%;
+    background-image: url("../img/lion_login.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top; 
+}
+
+/*------------------------ Forgot ------------------------*/
+.page_forgot {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../img/lion_back_register_pwd.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+}
+
+.page_forgot .container {
+    max-width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_forgot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 70vh;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px -3px rgba(0,0,0,0.76);
+}
+
+.form_forgot {
+    width: 70%;
+}
+
+.form_forgot img {
+    max-height: 80px;
+    margin-bottom: 5vh;
+}
+
+.form_forgot form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_forgot form .title {
+    color: #cca367;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.form_forgot form input {
+    width: 100%;
+    height: 35px;
+    color: #25559f;
+    font-size: 1em;
+    border-bottom: 2px solid #cca367;
+    outline: none;
+}
+
+.form_forgot form input.less_alert {
+    margin-bottom: 15px;
+}
+
+.form_forgot form .alert {
+    color: #cca367;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: 600;
+    margin:5px 0 15px 0;
+}
+
+.form_forgot form .btn_forgot {
+    width: 100%;
+    height: 35px;
+    background-color: #25559f;
+    color: #cca367;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+

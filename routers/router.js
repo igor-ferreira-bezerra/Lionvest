@@ -1,14 +1,26 @@
 const router = require("express").Router();
 const connection = require('../services/db');
+const { request, response } = require("express");
 
 
 router.get('/', (request, response) => {
     response.render('index.html');
 });
 
+//Router '/about' About
+router.get('/about', (request, response) => {
+    response.render('./home/about.html');
+});
+
+//Router '/investment' Investiment
+router.get('/investment', (request, response) => {
+    response.render('./home/investment.html')
+})
+
 //Router '/news' News
 router.get('/news', (request, response) => {
     connection.query('select * from post_news', (error, results, fields) => {
+        if (error) console.log(error);
         const post_news = results;
         response.render('./home/news.html', { post_news });
     });
@@ -19,6 +31,10 @@ router.get('/simulator', (request, response) => {
     response.render('./home/simulator.html');
 });
 
+router.get('/support', (request, response) => {
+    response.render('./home/support.html')
+});
+
 //Router '/login' Login
 router.get('/login', (request, response) => {
     response.render('./login/login.html')
@@ -26,11 +42,11 @@ router.get('/login', (request, response) => {
 
 //Router '/auth' Autetication 
 router.post('/auth', (require, response) => {
-    var email = require.body.email;
+    var cpf = require.body.cpf;
     var password = require.body.password;
-    console.log(email, password);
-    if (email && password) {
-        connection.query("select * from cliente where email = ? and aes_decrypt(senha,'chave') = ?", [email, password],
+    console.log(cpf, password);
+    if (cpf && password) {
+        connection.query("select * from cliente where cpf = ? and aes_decrypt(senha,'chave') = ?", [cpf, password],
             function (error, results, fields) {
                 console.log(results);
                 if (results.length > 0) {
@@ -49,13 +65,13 @@ router.post('/auth', (require, response) => {
 
 //Router '/forgot_pwd' Forgot Password
 router.get('/forgot_pwd', (request, response) => {
-    var type = 'senha';
+    let type = 'senha';
     response.render('./login/forgot.html', { type });
 });
 
 //Router '/forgot_pwd' Forgot Signature
 router.get('/forgot_sgt', (request, response) => {
-    var type = 'assinatura';
+    let type = 'assinatura';
     response.render('./login/forgot.html', { type });
 });
 

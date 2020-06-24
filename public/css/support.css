@@ -1,0 +1,111 @@
+
+/*----------------------- Suporte -----------------------*/
+
+.page_support {
+    width: 100%;
+    height: 110vh;
+    background: rgb(37,85,159);
+    background: linear-gradient(48deg, rgba(37,85,159,1) 0%, rgba(249,149,4,1) 100%);
+}
+.page_support .container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_support {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100vh;
+    margin: 5vh auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px -3px rgba(0,0,0,0.76);
+}
+
+.form_support {
+    width: 70%;
+}
+
+.form_support img {
+    max-height: 60px;
+}
+
+.form_support h1 {
+    color:#25559f;
+    font-size: 1.2em;
+    margin-top: 10px ;
+}
+
+.form_support h3 {
+    color: #25559f;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+.form_support .form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_support .form .title {
+    color: #cca367;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+.form_support .form input {
+    width: 100%;
+    height: 35px;
+    color: #25559f;
+    font-size: 1em;
+    border-bottom: 2px solid #cca367;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form_support .form .less_alert {
+    margin-bottom: 15px;
+}
+
+.form_support .form select {
+    width: 100%;
+    height: 35px;
+    color: #25559f;
+    font-size: 1em;
+    border-bottom: 2px solid #cca367;
+    outline: none;
+    border-radius: 5px;
+}
+
+.form_support .form textarea {
+    width: 100%;
+    height: 70px;
+    color: #25559f;
+    font-size: 1em;
+    border: 2px solid #cca367;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 10px;
+}
+
+.form_support .form .btn_support {
+    width: 100%;
+    height: 35px;
+    background-color: #25559f;
+    color: #cca367;
+    border-radius: 5px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.form_support .form a {
+    color: rgb(61, 61, 61);
+    font-size: 0.8em;
+    margin-top: 20px;
+    text-decoration: none;
+}

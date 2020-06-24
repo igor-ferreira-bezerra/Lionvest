@@ -2,11 +2,11 @@ const mysql = require('mysql');
 
 //Connect database 
 const connection = mysql.createConnection({
-    host: 'mysql669.umbler.com',
-    port: '41890',
-    user: 'lion_root',
-    password: 'Lion1234vest',
-    database: 'lionvest_db',
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: '123456',
+    database: 'lionvest',
 });
 /*
 connection.connect(function (err) {

@@ -11,4 +11,10 @@ JUROS COMPOSTOS
 
 M = C (1 + i)**t
 
- 
+F = P.(1+i)n + M.[(1+i)n - 1]/i
+
+F = valor futuro (também chamado VF ou FV)
+P = valor presente (também chamado VA ou PV)
+M = mensalidade (ou outro pagamento periódico, também chamado PGTO ou PMT)
+n = número de períodos (em dias, meses, anos, ..., também chamado NPER)
+i = taxa de juros (normalmente na forma percentual, também chamado TAXA ou RATE)

@@ -9,7 +9,10 @@ const query = 'update post_news set link_post = ?, img_post = ?, hat_post = ?, t
 //Function for request site and update data in database
 function request_bot() {
     request(url, function (error, response, body) {
-        if (error) console.log('Error:' + error);
+        if (error) {
+            console.log('Error:' + error);
+            return false;
+        }
         var $ = cheerio.load(body);
         $('div[class="row py-3 item"]').each(function (i, e) {
             let link = $(e).find('span[class="hl-title hl-title-2"] > a').attr('href');
@@ -20,7 +23,6 @@ function request_bot() {
             const values = [link, img, hat, title, time, i];
             connection.query(query, values, (error, result) => {
                 if (error) console.log(`Error Database: ${error}`);
-                console.log('Update news');
             })
         });
     });

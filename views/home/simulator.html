@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link REL="SHORTCUT ICON" HREF="./img/logo.jpg" type="image/x-icon">
-    <title>LionVest</title>
+    <title>Simulador</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/simulator.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="./js/simulator.js"></script>
 </head>
 
 <body>
@@ -42,46 +44,116 @@
         <div class="container">
             <div class="content_simulator">
                 <div class="select_simulator">
-                    <div id="tesouro_pre" class="item_select">
+                    <div id="tesouro_pre" onclick="click_investments('tesouro_pre')" class="item_select">
                         <p>Tesouro Prefixado</p>
                     </div>
-                    <div id="tesouro_selic" class="item_select select">
+                    <div id="tesouro_selic" onclick="click_investments('tesouro_selic')" class="item_select select">
                         <p>Tesouro Selic</p>
                     </div>
-                    <div id="tesouro_ipca" class="item_select">
+                    <div id="tesouro_ipca" onclick="click_investments('tesouro_ipca')" class="item_select">
                         <p>Tesouro IPCA+</p>
                     </div>
-                    <div id="cdb_lc" class="item_select">
+                    <div id="cdb_lc" onclick="click_investments('cdb_lc')" class="item_select">
                         <p>CDB e LC</p>
                     </div>
                 </div>
                 <div class="info_simulator">
                     <div class="config_simulator">
                         <div class="config_simulator_item">
+                            <p>Tempo de investimento</p>
+                            <h1 id="time_all" class="title_time">12 Meses</h1>
+                            <input onchange="change_time()" type="range" min="0" max="5" step="1" id="input_time"
+                                class="slider" value="2"></input>
+                        </div>
+                        <div class="config_simulator_item">
                             <div class="item_info">
-                                <p>Tempo de investimento</p>
-                                <h1 class="title_time"></h1>
-                                <input type="range" min="0" max="6" step="1" id="input_time" class="slider"
-                                    value="3"></input>
+                                <p>Depósito inicial</p>
+                                <span class="item_value">
+                                    R$<input id="input_initial" value="5000,00" disabled></input>
+                                </span>
+                            </div>
+                            <div class="btn_info">
+                                <button onclick="click_plus_initial()" class="btn_config">+</button>
+                                <button onclick="click_minus_initial()" class="btn_config"> &ndash;</button>
                             </div>
                         </div>
-                        <div class="config_simulator">
-                            <div class="config_simulator_item">
-                                <div class="item_info">
-                                    <p>Depósito inicial</p>
-                                    <span>R$<input id="input_initial" value="5000,00"></input></span>
+                        <div class="config_simulator_item">
+                            <div class="item_info">
+                                <p>Depósito mensal</p>
+                                <span class="item_value">
+                                    R$<input id="input_monthly" value="500,00" disabled></input>
+                                </span>
+                            </div>
+                            <div class="btn_info">
+                                <button onclick="click_plus_monthly()" class="btn_config">+</button>
+                                <button onclick="click_minus_monthly()" class="btn_config"> &ndash;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="result_simulator">
+                        <div class="info_result">
+                            <div class="savings_result">
+                                <h3 class="title_result">Total investido</h3>
+                                <h3 class="h3_all_savings">R$ <span id="all_savings">11.000,00</span></h3>
+                                <h3 class="title_result"> Na Poupança renderia</h3>
+                                <h3>R$ <span id="yield_savings">162,50</span></h3>
+                            </div>
+                            <div class="invested_result">
+                                <h3 class="title_result">
+                                    Em <span id="year_result">2021</span> você terá no
+                                    <span id="type_investment_0">Tesouro Selic</span>
+                                </h3>
+                                <h3 class="investment">R$ <span id="all_investment">11.174,13</span></h3>
+                                <h3 class="title_result">No <span id="type_investment_1">Tesouro Selic</span> renderá
+                                </h3>
+                                <h3 class="investment">R$ <span id="yield_investment">174,13</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dashboard_simulator">
+                        <div class="graphic_result">
+                            <div class="graphic_savings_result">
+                                <div class="savings_graphic"></div>
+                            </div>
+                            <div class="graphic_invested_result">
+                                <div class="box_result">
+                                    <p><span id="info_yield_result">+ 7.16%</span> <br>
+                                        <span class="info">de rendimentos em relação à poupança</span></p>
+                                    <div id="graphic_result_show" class="result"></div>
                                 </div>
-                            </div>
-                            <div class="config_simulator_item">
-                                <div class="item_info">
-                                    <p>Depósito mensal</p>
-                                    <span>R$<input id="input_monthly" value="500,00"></input></span>
-                                </div>
+                                <div class="savings_graphic"></div>
                             </div>
                         </div>
-                        <div class="result_simulator">
-
-                        </div>
+                    </div>
+                    <div class="simulator_information">
+                        <p id="p_information">*Considerações utilizadas na simulação: <br>
+                            1. de rentabilidade da Poupança: 0,17% a.m. <br>
+                            2. Tesouro Selic: 2,25% a.a.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="final">
+            <div class="container">
+                <div class="content">
+                    <div class="nav">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="/about">Sobre</a></li>
+                            <li><a href="/investment">Investimentos</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="/news">Notícias</a></li>
+                            <li><a href="/simulator">Simulador</a></li>
+                            <li><a href="/support">Suporte</a></li>
+                        </ul>
+                    </div>
+                    <div class="adress">
+                        <h3>Av. Paulista nº14563</h3>
+                        <h4>São Paulo - SP</h4>
+                    </div>
+                    <div class="social">
+                        <img src="./img/icon_social.png" alt="">
                     </div>
                 </div>
             </div>

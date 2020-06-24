@@ -1,0 +1,64 @@
+
+/*----------------------- About -----------------------*/
+
+.title_about {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/lion_back_register_pwd.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title_about .title {
+    width: 100%;
+    height: 100vh;
+    color: ivory;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.title_about .title h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+}
+
+.title_about  .title h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.our_history .content_our_history {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_our_history h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+    color: #cca367;
+    margin-bottom: 10vh;
+}
+.content_our_history .history {
+    width: 50%;
+}
+.content_our_history p {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #25559f;
+    text-align: justify;
+} 
+
+.flag {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/flag.png');
+    background-size: cover;
+    background-position: center;
+}

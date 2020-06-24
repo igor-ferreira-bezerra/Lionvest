@@ -1,0 +1,169 @@
+/*----------------------- investment -----------------------*/
+
+.title_investment {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/lion_back_register_pwd.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title_investment .title {
+    width: 100%;
+    height: 100vh;
+    color: ivory;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.title_investment .title h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+}
+
+.title_investment  .title h3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.types_investment {
+    width: 100%;
+    height: 100vh;
+}
+
+.types_investment .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content .title_types h3 {
+    color: #cca367;
+    font-size: 2.2em;
+    font-weight: 800;
+}
+
+.content .types {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .type {
+    background-color: #25559f;
+    color: #cca367;
+    width: 27%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.type h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 5vh;
+}
+
+.type p {
+    margin: 5vh 7% 3vh 7%;
+    text-align: justify;
+}
+
+.type ul {
+    width: 85%;
+}
+
+
+.title_idea {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../img/idea.png');
+    background-size: cover;
+    background-position: center;
+}
+
+.title_idea .title {
+    width: 100%;
+    height: 100vh;
+    color: ivory;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title_idea .title h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+    text-align: justify;
+}
+
+.title_idea .title h1 .author {
+    font-size: 0.7em;
+}
+
+.courses {
+    width: 100%;
+    height: 100vh;
+}
+
+.courses .content {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.content .title_courses h3 {
+    color: #cca367;
+    font-size: 2.2em;
+    font-weight: 800;
+}
+
+.content .courses {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.content .course {
+    color: #cca367;
+    width: 27%;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: solid 2px #25559f;
+    border-radius: 10px;
+}
+
+.course h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.course a {
+    background-color: #cca367;
+    color: #25559f;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 2vh 10%;
+    border-radius: 5px;
+}
+
+.course a:hover {
+    transition: 0.4s;
+    background-color: #25559f;
+    color: #cca367;
+}
