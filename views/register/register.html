@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/register.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="./js/script.js"></script>
+    <script src="./js/validation.js"></script>
 </head>
 
 <body>
@@ -19,11 +19,11 @@
                 <img src="./img/logo-lateral.png" alt="">
                 <h1>Seja bem-vindo.</h1>
                 <h3>Digite suas informações</h3>
-                <form action="/register_data" method="post">
+                <form action="/register_data" method="post" onsubmit="return check_register()">
                     <span class="title">Nome Completo</span>
-                    <input class="less_alert" type="text" name="nome" placeholder="Digite seu Nome">
+                    <input id="input_name" class="less_alert" type="text" name="nome" placeholder="Digite seu Nome">
                     <span class="title">Email</span>
-                    <input class="less_alert" type="text" name="email" placeholder="Digite seu Email">
+                    <input id="input_email" class="less_alert" type="text" name="email" placeholder="Digite seu Email">
                     <span class="title">CPF</span>
                     <input id="input_cpf" onchange="check_cpf()" type="text" name="cpf" placeholder="Digite seu CPF">
                     <span id="alert_cpf" class="alert">Somente números</span>

@@ -40,29 +40,6 @@ router.get('/login', (request, response) => {
     response.render('./login/login.html')
 });
 
-//Router '/auth' Autetication 
-router.post('/auth', (require, response) => {
-    var cpf = require.body.cpf;
-    var password = require.body.password;
-    console.log(cpf, password);
-    if (cpf && password) {
-        connection.query("select * from cliente where cpf = ? and aes_decrypt(senha,'chave') = ?", [cpf, password],
-            function (error, results, fields) {
-                console.log(results);
-                if (results.length > 0) {
-                    response.render('dashboard.html')
-                } else {
-                    response.send('Incorrect Username and/or Password!');
-                }
-                response.end();
-            })
-    }
-    else {
-        response.send('Please enter Username and Password!');
-        response.end();
-    }
-});
-
 //Router '/forgot_pwd' Forgot Password
 router.get('/forgot_pwd', (request, response) => {
     let type = 'senha';
@@ -80,15 +57,18 @@ router.get('/register', (request, response) => {
     response.render('./register/register.html');
 });
 
+//Router '/register_data' Register Data
 router.post('/register_data', (require, response) => {
     let nome = require.body.nome;
     let email = require.body.email;
     let cpf = require.body.cpf;
     let data_nascimento = require.body.data_nascimento;
-    let dados = { nome, email, cpf, data_nascimento };
+    let action = '/register_pwd';
+    let dados = { nome, email, cpf, data_nascimento, action };
     response.render('./register/register_pwd.html', { dados });
 });
 
+//Router '/register_pwd' Register Password
 router.post('/register_pwd', (require, response) => {
     let nome = require.body.nome;
     let email = require.body.email;
@@ -96,34 +76,73 @@ router.post('/register_pwd', (require, response) => {
     let data_nascimento = require.body.data_nascimento;
     let senha = require.body.senha;
     let assinatura = require.body.assinatura;
-    let values = { nome, email, cpf, data_nascimento, senha, assinatura };
-    let query = 'insert into cliente value (null,?,?,?,?,MD5(?),?)';
-    /*connection.query(query, values, (err, result) => {
+    let values = [nome, email, cpf, data_nascimento, senha, assinatura];
+    let query = `insert into cliente value (null,?,?,?,?,MD5(?),MD5(?));`;
+    connection.query(query, values, (err, result) => {
         if (err) {
-            response.render('/register');
             console.log(err)
         } else {
-            console.log('ok')
+            response.render('./login/login.html');
         }
-    }) */
+    });
 });
 
-//Router '/sign_up' Sign_up in db
-router.post('/sign_up', function (require, response) {
-    var user = require.body.user;
-    var email = require.body.email;
-    var telefone = require.body.telefone;
-    var cnpj = require.body.cnpj;
-    var senha = require.body.password;
-    connection.query(`insert into cliente (nome,telefone,email,senha,cnpj) 
-    values ('${user}','${telefone}','${email}',aes_encrypt('${senha}','chave'),'${cnpj}');`, function (error, results, fields) {
-        console.log(`error: ${error}`);
-        console.log(results);
-        if (results) {
-            response.render('dashboard.html');
-        }
-    })
+//Router '/auth' Autetication 
+router.post('/auth', (require, response) => {
+    var cpf = require.body.cpf;
+    var password = require.body.password;
+    connection.query("select * from cliente where cpf = ? and senha = MD5(?)", [cpf, password],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error)
+            } else {
+                if (results.length > 0) {
+                    let name = results[0].nome;
+                    response.render('./investments/graphic.html', { name });
+                } else {
+                    response.render('./login/login.html')
+                }
+            }
+        });
+});
 
-})
+//Router '/check_forgot' Check Forgot 
+router.post('/check_forgot', (require, response) => {
+    let cpf = require.body.cpf;
+    let email = require.body.email;
+    let type = require.body.type;
+    let action = '/register_only';
+    let dados = { cpf, action };
+    let query = `select * from cliente where cpf = ? and email = ?;`;
+    connection.query(query, [cpf, email],
+        function (error, results, fields) {
+            if (error) {
+                console.log(error)
+            } else {
+                if (results.length > 0) {
+                    response.render('./register/register_pwd.html', { dados })
+                } else {
+                    response.render('./login/forgot.html', { type });
+                }
+            }
+        });
+});
+
+//Router '/regiter_only' Register only Password or Subscription
+router.post('/register_only', (require, response) => {
+    let cpf = require.body.cpf;
+    let senha = require.body.senha;
+    let assinatura = require.body.assinatura;
+    let values = [senha, assinatura, cpf];
+    let query = `update cliente set senha = MD5(?), assinatura = MD5(?) where cpf = ?;`;
+    connection.query(query, values, (err, result) => {
+        if (err) {
+            console.log(err);
+        } else {
+            response.render('./login/login.html');
+        }
+    });
+});
+
 
 module.exports = router;

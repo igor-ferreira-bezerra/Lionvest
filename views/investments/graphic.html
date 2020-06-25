@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico</title>
+    <link rel="stylesheet" href="./css/graphic.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <p>Seja bem-vindo <span>{{name}}</span></p>
+            <a class="button" href="/support">Suporte</a class="button">
+        </div>
+    </header>
+    <div class="graphic">
+        <!-- TradingView Widget BEGIN -->
+        <div class="tradingview-widget-container">
+            <div id="tradingview_f6e05"></div>
+            <div class="tradingview-widget-copyright"><a href="https://br.tradingview.com/symbols/INDEX-IBOV/"
+                    rel="noopener" target="_blank"><span class="blue-text">Gráfico IBOV</span></a> por TradingView</div>
+            <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+            <script type="text/javascript">
+                new TradingView.widget(
+                    {
+                        "width": 1080,
+                        "height": 680,
+                        "symbol": "INDEX:IBOV",
+                        "interval": "D",
+                        "timezone": "Etc/UTC",
+                        "theme": "light",
+                        "style": "1",
+                        "locale": "br",
+                        "toolbar_bg": "#f1f3f6",
+                        "enable_publishing": false,
+                        "allow_symbol_change": true,
+                        "container_id": "tradingview_f6e05"
+                    }
+                );
+            </script>
+        </div>
+        <!-- TradingView Widget END -->
+    </div>
+
+</body>
+
+</html>
