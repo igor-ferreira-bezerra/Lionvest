@@ -18,7 +18,7 @@ a.button:hover {
 .title_home {
     width: 100%;
     height: 100vh;
-    background-image: url('../img/lion_back_about.jpg');
+    background-image: url('../img/lion_back_home.jpg');
     background-size: cover;
     background-position: center;
 }
