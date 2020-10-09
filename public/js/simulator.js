@@ -68,6 +68,7 @@ function click_investments(type) {
         type_investment_1.innerHTML = 'CDB e LC';
         p_information.innerHTML = information.cdb_lc;
     }
+    console.log(input_global)
     calculator();
 }
 
@@ -101,6 +102,7 @@ function click_plus_initial() {
     input_global.initial = value_initial;
     let value_push = manipulation_value('push', value_initial);
     input_initial.value = value_push;
+    console.log(value_push);
     calculator();
 }
 
@@ -111,6 +113,7 @@ function click_minus_initial() {
         input_global.initial = value_initial;
         let value_push = manipulation_value('push', value_initial);
         input_initial.value = value_push;
+        console.log(value_push);
     }
     calculator();
 }
@@ -121,6 +124,7 @@ function click_plus_monthly() {
     input_global.monthly = value_monthly;
     let value_push = manipulation_value('push', value_monthly);
     input_monthly.value = value_push;
+    console.log(value_push);
     calculator();
 }
 
@@ -131,6 +135,7 @@ function click_minus_monthly() {
         input_global.monthly = value_monthly;
         let value_push = manipulation_value('push', value_monthly);
         input_monthly.value = value_push;
+        console.log(value_push);
     }
     calculator();
 }
@@ -141,6 +146,7 @@ function manipulation_value(action, value) {
         value_manipulation.splice(0, 3);
         value_manipulation.reverse();
         return value_manipulation.join([separador = '']);
+        console.log('pull')
     } else if (action == 'push') {
         let value_manipulation = `${value},00`;
         return value_manipulation;
@@ -161,6 +167,7 @@ function savings_calculator() {
     let result_monthly = input_global.monthly * [(1 + interest_rates.saving) ** input_global.time_all - 1] / interest_rates.saving;
     let savings_investment = result_initial + result_monthly;
     result_global.yield_savings = (savings_investment - result_global.all_savings).toFixed(2);
+    console.log(result_global.yield_savings);
 }
 
 function investment_calculator() {
@@ -183,6 +190,7 @@ function investment_calculator() {
         result_global.all_investment = (result_initial + result_monthly).toFixed(2);
     }
     result_global.yield_investment = (result_global.all_investment - result_global.all_savings).toFixed(2);
+    console.log(result_global.yield_investment);
 }
 
 function calculator_graphic() {
@@ -214,5 +222,6 @@ function manipulation_result(result) {
         result_manipulation.splice(6, 0, '.')
     }
     result_manipulation.reverse();
+    console.log(result_manipulation);
     return result_manipulation.join([separador = '']);
 }

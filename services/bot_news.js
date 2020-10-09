@@ -4,7 +4,7 @@ const connection = require('./db');
 const url = 'https://www.infomoney.com.br/ultimas-noticias/'
 
 //Query insert data in database
-const query = 'update post_news set link_post = ?, img_post = ?, hat_post = ?, title_post = ?, time_post = ? where id_post = ?;';
+const query = 'update post_news set link_post = ?, img_post = ?, hat_post = ?, title_post = ?, time_post = ? where id_post = ?';
 
 //Function for request site and update data in database
 function request_bot() {

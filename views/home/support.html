@@ -35,16 +35,46 @@
                         </select>
                         <span class="title">Mais informações</span>
                         <textarea id="input_mais" cols="30" rows="10"></textarea>
-                        <button onclick="window.location.href = `https://app.pipefy.com/public/form/ly54q8jd`"
-                            class="btn_support">ENVIAR</button>
+                        <button onclick="request_support()" class="btn_support">ENVIAR</button>
                     </div>
                 </div>
             </div>
         </div>
-        <iframe style="display: none;" src="https://app.pipefy.com/public/form/ly54q8jd?embedded=true"
+        <iframe style="display: none;" src="http://app.pipefy.com/public/form/ly54q8jd?embedded=true"
             frameborder="0"></iframe>
     </div>
 
 </body>
 
 </html>
+<script>
+    function request_support() {
+        var nome = input_nome.value;
+        var email = input_email.value;
+        var assunto = input_assunto.value;
+        var categoria = input_categoria.value;
+        var mais = input_mais.value;
+        check_support(nome, email, assunto, categoria, mais);
+    }
+    function check_support(nome, email, assunto, categoria, mais) {
+        if (nome.length == 0 || email.length == 0 || email.search('@') == -1 || assunto.length == 0 || categoria.length == 0) {
+            if (nome.length == 0) {
+                input_nome.style.border = '2px solid #25559f';
+            }
+            if (email.length == 0 || email.search('@') == -1) {
+                input_email.style.border = '2px solid #25559f';
+            }
+            if (assunto.length == 0) {
+                input_assunto.style.border = '2px solid #25559f';
+            }
+            if (categoria.length == 0) {
+                input_categoria.style.border = '2px solid #25559f';
+            }
+        } else {
+            submit_support();
+        }
+    }
+    function submit_support() {
+
+    }
+</script>
