@@ -1,11 +1,11 @@
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 //Connect database 
 const connection = mysql.createConnection({
-    host: 'localhost',
+    host: 'ferreiraserver.ddns.net',
     port: '3306',
     user: 'root',
-    password: '123456',
+    password: 'Igorserver0401',
     database: 'lionvest',
 });
 /*
